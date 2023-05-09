@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    {% if user.is_superuser %}
+        <a href="{% url 'catalog:category_create' %}">Create new category</a>
+    {% endif %}
+    <ul>
+        {% for cat in categories %}
+            <li>
+                <a href="{% url 'catalog:product_list' cat.uid %}">{{ cat.title }}</a>___<a href="{% url 'catalog:product_create' cat.uid%}">Create new product</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

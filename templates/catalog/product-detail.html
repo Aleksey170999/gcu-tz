@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+    Detail
+{% endblock %}
+   <h3>{{ product.title }}</h3>
+
+{% block content %}
+   <h3>{{ product.title }}</h3>
+    <ul>
+        <li>{{ product.description }}</li>
+        <li>{{ product.price }}</li>
+    </ul>
+    <a href="{% url 'catalog:product_edit' product.uid %}">EDIT</a>
+{% endblock %}

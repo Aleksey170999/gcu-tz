@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<ul>
+  {% for prod in products %}
+    <li>
+    <a href="{% url 'catalog:product_detail' prod.uid %}">{{ prod.title }}, {{ prod.price }}</a>
+    </li>
+  {% endfor %}
+</ul>
